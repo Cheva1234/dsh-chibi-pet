@@ -25,9 +25,9 @@ jobs:
       - name: Behaviour tests
         run: node tools/test-machine.mjs
 
-  spellcheck-ignored:
+  builder-parses:
     # The sprite pack is not in the repository, so the builder cannot run here;
-    # this job only proves the script parses and reports its usage.
+    # this job only proves the script still parses.
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
