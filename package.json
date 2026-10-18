@@ -2,7 +2,7 @@
   "name": "dsh-chibi-pet",
   "version": "1.0.1",
   "type": "module",
-  "description": "A floating chibi pet for the DeepSeek Harness Web GUI: it follows one session, reacts to what that session is doing, and takes work you type into it.",
+  "description": "A floating chibi pet for the DeepSeek Harness Web GUI: it follows one session, reacts to what that session is doing, and takes work you type into it. Unofficial non-commercial fan project, not affiliated with Hololive or DeepSeek.",
   "icon": "./icon.svg",
   "exports": {
     ".": "./index.js",

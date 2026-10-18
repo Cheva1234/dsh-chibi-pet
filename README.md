@@ -4,6 +4,11 @@
 [![npm](https://img.shields.io/npm/v/dsh-chibi-pet.svg)](https://www.npmjs.com/package/dsh-chibi-pet)
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 
+> **Unofficial fan project.** Not affiliated with, endorsed by, or produced by
+> COVER Corp., Hololive Production, or DeepSeek. Free and non-commercial; the
+> artwork follows COVER's [Derivative Works Guidelines](https://hololivepro.com/en/terms/)
+> — see [ATTRIBUTION.md](ATTRIBUTION.md).
+
 A chibi pet for the DeepSeek Harness Web GUI. It floats over the frame, belongs
 to **one session**, and shows what that session is actually doing — thinking,
 running tools, waiting for an approval, finishing, failing, dozing off. You can
@@ -195,5 +200,11 @@ mode, the keyboard command and `prefers-reduced-motion`.
 
 ## Licence
 
-Code: [MIT](LICENSE). The sprite artwork is third-party fan art with its own
-notice — read [ATTRIBUTION.md](ATTRIBUTION.md) before reusing it.
+Code: [MIT](LICENSE).
+
+The sprite artwork is third-party fan art and is **not** covered by that
+licence. It is used under COVER Corp.'s
+[Derivative Works Guidelines](https://hololivepro.com/en/terms/) as a free,
+non-commercial fan project, with no official affiliation — read
+[ATTRIBUTION.md](ATTRIBUTION.md) before reusing or forking, and note that the
+guidelines themselves are the authority and can change.
