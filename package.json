@@ -56,5 +56,10 @@
   ],
   "engines": {
     "node": ">=20"
+  },
+  "scripts": {
+    "check": "node --check client.js && node tools/check-bundle.mjs && node tools/test-machine.mjs",
+    "build": "python3 tools/build_sprites.py --pack ./vendor/deepseek-chibi",
+    "prepublishOnly": "npm run check"
   }
 }
