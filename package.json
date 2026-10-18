@@ -1,6 +1,6 @@
 {
   "name": "dsh-chibi-pet",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "type": "module",
   "description": "A floating chibi pet for the DeepSeek Harness Web GUI: it follows one session, reacts to what that session is doing, and takes work you type into it.",
   "icon": "./icon.svg",

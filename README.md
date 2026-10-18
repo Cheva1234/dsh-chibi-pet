@@ -23,7 +23,7 @@ the install field, and confirm:
 ```
 dsh-chibi-pet                                    # after it is on npm
 github:Cheva1234/dsh-chibi-pet                   # straight from this repo
-https://github.com/Cheva1234/dsh-chibi-pet/releases/download/v1.0.0/dsh-chibi-pet-1.0.0.tgz
+https://github.com/Cheva1234/dsh-chibi-pet/releases/download/v1.0.1/dsh-chibi-pet-1.0.1.tgz
 ```
 
 **From the Plugin Manager tool** (used by an agent, or by you):
