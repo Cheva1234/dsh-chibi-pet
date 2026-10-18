@@ -750,11 +750,18 @@ window.__ModuleLoader__.load({
       '.dsh-chibi-pet-switch>span{position:absolute;top:2px;left:2px;width:16px;height:16px;border-radius:50%;'
         + 'background:var(--dsw-alias-label-tertiary);transition:left .15s,background .15s}',
       '.dsh-chibi-pet-switch[aria-checked="true"]>span{left:20px;background:var(--dsw-alias-bg-base)}',
-      '.dsh-chibi-pet-toggle{display:flex;align-items:center;gap:8px;width:100%;min-height:32px;box-sizing:border-box;position:relative;'
-        + 'padding:0 8px;border:none;border-radius:var(--dsw-radius-sm,6px);background:none;cursor:pointer;font:inherit;text-align:left}',
-      '.dsh-chibi-pet-toggle:hover{background:var(--dsw-alias-interactive-bg-hover)}',
+      // The sidebar foot is a row of chips shared with other plugins (the credit
+      // monitor lives here too), so this is an intrinsically sized chip, never a
+      // full-width row: it must not push its neighbours out of the row.
+      '.dsh-chibi-pet-toggle{display:inline-flex;align-items:center;justify-content:center;gap:6px;height:28px;min-width:28px;'
+        + 'max-width:100%;box-sizing:border-box;padding:0 8px;position:relative;border:1px solid transparent;border-radius:8px;'
+        + 'background:none;color:var(--dsw-alias-label-secondary);cursor:pointer;font:inherit;font-size:12px;font-weight:600;line-height:1}',
+      '.dsh-chibi-pet-toggle:hover{background:var(--dsw-alias-interactive-bg-hover);color:var(--dsw-alias-label-primary)}',
+      '.dsh-chibi-pet-toggle[aria-checked="false"]{color:var(--dsw-alias-label-tertiary)}',
       '.dsh-chibi-pet-toggle:focus-visible{outline:2px solid var(--dsw-alias-brand-primary);outline-offset:-2px}',
-      '.dsh-chibi-pet-dot{width:8px;height:8px;border-radius:50%;background:var(--dsw-alias-state-warn-primary);flex:none;margin-left:auto}',
+      '.dsh-chibi-pet-label{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}',
+      '.dsh-chibi-pet-dot{position:absolute;top:2px;right:2px;width:7px;height:7px;border-radius:50%;'
+        + 'background:var(--dsw-alias-state-warn-primary);box-shadow:0 0 0 1.5px var(--dsw-specific-sidebar-fill,var(--dsw-alias-bg-base))}',
     ].join('');
 
     /**
@@ -1441,32 +1448,22 @@ window.__ModuleLoader__.load({
           'aria-label': t('toggle.label') + ' — ' + (on ? t('toggle.on') : t('toggle.off')),
           title: (on ? t('toggle.on') : t('toggle.off')) + ' · ' + t('toggle.hint'),
           onClick: () => prefs.toggle(),
-          style: wide ? undefined : { width: '36px', height: '36px', padding: 0, justifyContent: 'center' },
+          style: wide ? undefined : { width: '28px', padding: 0 },
         },
           h('span', {
             key: 'glyph',
-            style: {
-              display: 'inline-flex',
-              color: on ? 'var(--dsw-alias-label-primary)' : 'var(--dsw-alias-label-tertiary)',
-            },
-          }, h(PetGlyph, { size: 16 })),
+            style: { display: 'inline-flex', color: 'currentColor', flex: 'none' },
+          }, h(PetGlyph, { size: 15 })),
           wide ? h('span', {
             key: 'label',
-            style: {
-              flex: 1,
-              minWidth: 0,
-              overflow: 'hidden',
-              textOverflow: 'ellipsis',
-              whiteSpace: 'nowrap',
-              color: on ? 'var(--dsw-alias-label-primary)' : 'var(--dsw-alias-label-tertiary)',
-            },
+            className: 'dsh-chibi-pet-label',
+            style: { minWidth: 0 },
           }, t('toggle.label')) : null,
           attentionState.count > 0 ? h('span', {
             key: 'dot',
             className: 'dsh-chibi-pet-dot',
             role: 'status',
             'aria-label': t('toggle.attention'),
-            style: wide ? undefined : { position: 'absolute', top: '4px', right: '4px', marginLeft: 0 },
           }) : null);
       }
 
