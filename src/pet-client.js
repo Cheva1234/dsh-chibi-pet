@@ -743,7 +743,10 @@ window.__ModuleLoader__.load({
         + 'max-width:100%;box-sizing:border-box;padding:0 8px;position:relative;border:1px solid transparent;border-radius:8px;'
         + 'background:none;color:var(--dsw-alias-label-secondary);cursor:pointer;font:inherit;font-size:12px;font-weight:600;line-height:1}',
       '.dsh-chibi-pet-toggle:hover{background:var(--dsw-alias-interactive-bg-hover);color:var(--dsw-alias-label-primary)}',
-      '.dsh-chibi-pet-toggle[aria-checked="false"]{color:var(--dsw-alias-label-tertiary)}',
+      // A hidden pet has to be obvious at a glance in the foot row, where the
+      // chip sits beside unrelated controls.
+      '.dsh-chibi-pet-toggle[aria-checked="false"]{color:var(--dsw-alias-label-tertiary);opacity:.62}',
+      '.dsh-chibi-pet-toggle[aria-checked="false"]:hover{opacity:1}',
       '.dsh-chibi-pet-toggle:focus-visible{outline:2px solid var(--dsw-alias-brand-primary);outline-offset:-2px}',
       '.dsh-chibi-pet-label{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}',
       '.dsh-chibi-pet-dot{position:absolute;top:2px;right:2px;width:7px;height:7px;border-radius:50%;'
