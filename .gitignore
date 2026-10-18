@@ -1,0 +1,15 @@
+# Installed plugins never belong in the repository.
+node_modules/
+
+# Build inputs and outputs that stay local: the sprite pack is supplied by the
+# user, and the release tarball is produced by `npm pack`.
+vendor/
+*.tgz
+
+# Verification scaffolding.
+chrome-profile/
+shots/
+
+# Editors and OS noise.
+.DS_Store
+*.log

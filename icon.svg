@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32" role="img" aria-label="Chibi pet">
+  <defs>
+    <linearGradient id="hair" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#7fd4f5"/>
+      <stop offset="1" stop-color="#2f7fd0"/>
+    </linearGradient>
+  </defs>
+  <path d="M16 2.5 21 7H11z" fill="#2f7fd0"/>
+  <circle cx="16" cy="16.5" r="10.5" fill="url(#hair)"/>
+  <path d="M5.5 15.5c0-6 4.7-10.8 10.5-10.8S26.5 9.5 26.5 15.5c0-2.6-4.7-4.4-10.5-4.4S5.5 12.9 5.5 15.5z" fill="#bfe9fb"/>
+  <ellipse cx="16" cy="18.6" rx="8.4" ry="8.1" fill="#fdf3ea"/>
+  <ellipse cx="12.4" cy="18" rx="1.5" ry="1.9" fill="#20304a"/>
+  <ellipse cx="19.6" cy="18" rx="1.5" ry="1.9" fill="#20304a"/>
+  <circle cx="12.9" cy="17.3" r=".6" fill="#fff"/>
+  <circle cx="20.1" cy="17.3" r=".6" fill="#fff"/>
+  <path d="M14.6 22.4q1.4 1.2 2.8 0" stroke="#20304a" stroke-width=".9" stroke-linecap="round" fill="none"/>
+  <ellipse cx="8.2" cy="21.6" rx="1.5" ry="1" fill="#ffb4b4" opacity=".75"/>
+  <ellipse cx="23.8" cy="21.6" rx="1.5" ry="1" fill="#ffb4b4" opacity=".75"/>
+</svg>

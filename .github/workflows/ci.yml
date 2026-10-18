@@ -1,0 +1,43 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        node: ['20', '22']
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node }}
+      - name: Bundle syntax
+        run: node --check client.js
+      - name: Bundle consistency
+        run: node tools/check-bundle.mjs
+      - name: Behaviour tests
+        run: node tools/test-machine.mjs
+
+  spellcheck-ignored:
+    # The sprite pack is not in the repository, so the builder cannot run here;
+    # this job only proves the script parses and reports its usage.
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Builder usage
+        run: |
+          python3 - <<'PY'
+          import ast, pathlib
+          ast.parse(pathlib.Path('tools/build_sprites.py').read_text())
+          print('build_sprites.py parses')
+          PY
